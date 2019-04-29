@@ -16,7 +16,17 @@ This is available in the AUR as a git package: [`systemd-manager-git`](https://a
 
 ### Building From Source
 
-This will simply install directly to the /usr prefix. Simply install Rust via [rustup.rs](https://www.rustup.rs/) and execute `make & sudo make install`. The installation of Rust software is incredibly simple as the process is largely just `cargo build --release`, but this installation script will install all the files needed by the application for proper integration with **PolicyKit** into the correct places in the filesystem, which `cargo install` does not perform.
+#### Prereqs
+
+Simply install Rust via [rustup.rs](https://www.rustup.rs/) and install dependencies
+
+```sh
+sudo apt-get install libgtk-3-dev
+```
+
+#### Build
+
+Execute `make & sudo make install`. This will simply install directly to the /usr prefix. The installation of Rust software is incredibly simple as the process is largely just `cargo build --release`, but this installation script will install all the files needed by the application for proper integration with **PolicyKit** into the correct places in the filesystem, which `cargo install` does not perform.
 
 ```sh
 git clone https://github.com/mmstick/systemd-manager && cd systemd-manager && make && sudo make install
